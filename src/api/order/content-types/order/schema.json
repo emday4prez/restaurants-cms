@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "zipcode": {
+      "type": "integer"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "restaurant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::restaurant.restaurant"
+    },
+    "dishes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dish.dish"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "total": {
+      "type": "decimal"
+    }
+  }
+}
