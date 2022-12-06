@@ -26,11 +26,6 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
     },
-    "restaurant": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::restaurant.restaurant"
-    },
     "dishes": {
       "type": "relation",
       "relation": "oneToMany",
