@@ -15,30 +15,17 @@
     "address": {
       "type": "string"
     },
-    "city": {
+    "amount": {
+      "type": "decimal"
+    },
+    "name": {
       "type": "string"
     },
-    "zipcode": {
-      "type": "integer"
-    },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+    "token": {
+      "type": "string"
     },
     "dishes": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::dish.dish"
-    },
-    "date": {
-      "type": "date"
-    },
-    "time": {
-      "type": "time"
-    },
-    "total": {
-      "type": "decimal"
+      "type": "json"
     }
   }
 }
