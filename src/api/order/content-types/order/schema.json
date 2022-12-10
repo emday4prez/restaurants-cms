@@ -18,14 +18,11 @@
     "amount": {
       "type": "decimal"
     },
-    "name": {
-      "type": "string"
-    },
-    "token": {
-      "type": "string"
-    },
     "dishes": {
       "type": "json"
+    },
+    "city": {
+      "type": "string"
     }
   }
 }
