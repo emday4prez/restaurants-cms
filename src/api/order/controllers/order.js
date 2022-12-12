@@ -12,6 +12,9 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     const { address, amount, dishes, token, city, state } = JSON.parse(
       ctx.request.body
     );
+    const dishNames = dishes.map((dish) => {
+      return { dish: dish.name, quantity: dish.quantity };
+    });
     console.log("ctx.state", ctx.state);
     const stripeAmount = Math.floor(amount * 100);
     // charge on stripe
@@ -19,7 +22,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
       // Transform cents to dollars.
       amount: stripeAmount,
       currency: "usd",
-      description: `Order ${new Date()} by authenticated user`,
+      description: `${JSON.stringify(dishNames)}`,
       //description: `Order ${new Date()} by ${ctx.state.user._id}`,
       source: token,
     });
